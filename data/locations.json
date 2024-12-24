@@ -1,332 +1,92 @@
 [
     {
-        "name": "Abernathy House",
-        "architect": "William F. Cody",
-        "year": "1962",
-        "address": "611 W Via Lola, Palm Springs, CA 92262",
-        "lat": 33.824590,
-        "lng": -116.547560,
-        "streetViewHeading": 0,
-        "description": "This private residence showcases Cody's mastery of desert modernism with its distinctive angled roofline, floor-to-ceiling windows, and sheltered outdoor living spaces."
-    },
-    {
-        "name": "Alexander Steel Houses",
-        "architect": "Donald Wexler & Richard Harrison",
-        "year": "1962",
-        "address": "290 E Simms Rd, Palm Springs, CA 92262",
-        "lat": 33.858930,
-        "lng": -116.545120,
-        "streetViewHeading": 180,
-        "description": "These groundbreaking homes pioneered the use of prefabricated steel in residential architecture, featuring modular construction and innovative cooling systems designed specifically for desert living."
-    },
-    {
-        "name": "Architecture and Design Center, Edwards Harris Pavilion",
-        "architect": "E. Stewart Williams",
-        "year": "1961",
-        "address": "300 S Palm Canyon Dr, Palm Springs, CA 92262",
-        "lat": 33.820890,
-        "lng": -116.546570,
-        "streetViewHeading": 90,
-        "description": "This former bank building exemplifies mid-century financial architecture with its glass pavilion design, deep overhangs, and sculptural concrete screens, now serving as a showcase for architectural exhibitions."
-    },
-    {
-        "name": "Bank of America Building",
-        "architect": "Victor Gruen Associates",
-        "year": "1959",
-        "address": "588 S Palm Canyon Dr, Palm Springs, CA 92264",
-        "lat": 33.818470,
-        "lng": -116.546730,
-        "streetViewHeading": 90,
-        "description": "The building's striking facade features geometric sun screens and a distinctive entrance canopy, demonstrating how modernist design could make banking both elegant and accessible."
-    },
-    {
-        "name": "Coachella Valley Savings & Loan",
-        "architect": "E. Stewart Williams",
-        "year": "1961",
-        "address": "499 S Palm Canyon Dr, Palm Springs, CA 92262",
-        "lat": 33.819520,
-        "lng": -116.546760,
-        "streetViewHeading": 90,
-        "description": "The building's unique mushroom-shaped concrete sunshades and floating interior mezzanine showcase Williams' innovative approach to desert banking architecture."
-    },
-    {
-        "name": "Convention Center",
-        "architect": "William Pereira & Associates",
-        "year": "1974",
-        "address": "277 N Avenida Caballeros, Palm Springs, CA 92262",
-        "lat": 33.825210,
-        "lng": -116.544730,
-        "streetViewHeading": 270,
-        "description": "The center's sweeping horizontal lines and expansive glass walls create a dialogue between indoor and outdoor spaces, while its desert-inspired color palette harmonizes with the surrounding landscape."
-    },
-    {
-        "name": "Del Marcos Hotel",
-        "architect": "William Cody",
-        "year": "1947",
-        "address": "225 W Baristo Rd, Palm Springs, CA 92262",
-        "lat": 33.822350,
-        "lng": -116.546410,
-        "streetViewHeading": 0,
-        "description": "This early example of desert modernism features angular stone walls, creative sun shading, and a distinctive asymmetrical facade that earned Cody early recognition in his career."
-    },
-    {
-        "name": "Desert Holly Complex",
-        "architect": "Herbert Burns",
-        "year": "1947",
-        "address": "605 S Warm Sands Dr, Palm Springs, CA 92264",
-        "lat": 33.818920,
-        "lng": -116.543210,
-        "streetViewHeading": 270,
-        "description": "Burns' sophisticated approach to apartment design is evident in the complex's horizontal lines, private courtyards, and innovative use of concrete block for both decoration and climate control."
-    },
-    {
-        "name": "Desert Regional Medical Center Addition",
-        "architect": "HMC Architects",
-        "year": "2012",
-        "address": "1150 N Indian Canyon Dr, Palm Springs, CA 92262",
-        "lat": 33.837230,
-        "lng": -116.547340,
-        "streetViewHeading": 90,
-        "description": "This contemporary addition respects the modernist tradition while incorporating sustainable design elements, featuring energy-efficient sun shading and desert-appropriate landscaping."
-    },
-    {
-        "name": "Downtown Palm Springs Redevelopment",
-        "architect": "Gensler",
-        "year": "2017",
-        "address": "123 N Palm Canyon Dr, Palm Springs, CA 92262",
-        "lat": 33.822510,
-        "lng": -116.546910,
-        "streetViewHeading": 90,
-        "description": "This modern complex reinterprets mid-century principles through contemporary materials and sustainable design, creating vibrant public spaces that honor Palm Springs' architectural heritage."
-    },
-    {
-        "name": "Elvis Honeymoon Hideaway",
-        "architect": "Krisel & Palmer",
-        "year": "1962",
-        "address": "1350 Ladera Circle, Palm Springs, CA 92262",
-        "lat": 33.837310,
-        "lng": -116.540610,
-        "streetViewHeading": 315,
-        "description": "This geometric marvel features four circular living spaces on three levels, with stone walls and floor-to-ceiling windows that create a sophisticated interpretation of futuristic design."
-    },
-    {
-        "name": "Elrod House",
-        "architect": "John Lautner",
-        "year": "1968",
-        "address": "2175 Southridge Dr, Palm Springs, CA 92264",
-        "lat": 33.818310,
-        "lng": -116.558210,
-        "streetViewHeading": 225,
-        "description": "Perched dramatically on a ridge, this home's concrete dome roof and retractable glass walls create a spectacular living space that seems to float above the desert floor."
-    },
-    {
-        "name": "Frey House II",
-        "architect": "Albert Frey",
-        "year": "1964",
-        "address": "686 W Palisades Dr, Palm Springs, CA 92262",
-        "lat": 33.832510,
-        "lng": -116.554010,
-        "streetViewHeading": 0,
-        "description": "Nestled against a mountain boulder, this compact home demonstrates Frey's genius for site integration, with a sloping roof that mirrors the mountain's rise and industrial materials that complement the natural rock."
-    },
-    {
-        "name": "Hidden Frey",
-        "architect": "Albert Frey",
-        "year": "1966",
-        "address": "1620 Via Roberto Miguel, Palm Springs, CA 92262",
-        "lat": 33.836510,
-        "lng": -116.541810,
-        "streetViewHeading": 180,
-        "description": "This secluded residence demonstrates Frey's masterful handling of light and shadow, featuring his signature butterfly roof and innovative solutions for desert climate control."
-    },
-    {
-        "name": "House of Tomorrow",
-        "architect": "William Krisel",
-        "year": "1960",
-        "address": "1350 Ladera Circle, Palm Springs, CA 92262",
-        "lat": 33.835910,
-        "lng": -116.546310,
-        "streetViewHeading": 315,
-        "description": "This bold design features three distinct levels with geometric shapes and cantilevered overhangs, embodying the optimistic futurism of its era through innovative spatial arrangements."
-    },
-    {
-        "name": "Kaufmann House",
-        "architect": "Richard Neutra",
-        "year": "1946",
-        "address": "470 W Vista Chino, Palm Springs, CA 92262",
-        "lat": 33.833582,
-        "lng": -116.547315,
-        "streetViewHeading": 180,
-        "description": "This masterpiece of International Style architecture uses sliding glass walls and strategic overhangs to create a seamless connection between interior spaces and the desert landscape."
-    },
-    {
-        "name": "Kimpton Rowan Hotel",
-        "architect": "Carrier Johnson + CULTURE",
-        "year": "2017",
-        "address": "100 W Tahquitz Canyon Way, Palm Springs, CA 92262",
-        "lat": 33.824017,
-        "lng": -116.546853,
-        "streetViewHeading": 0,
-        "description": "This contemporary high-rise hotel pays homage to modernist principles through its clean lines and extensive use of glass, while adding sustainable features and a rooftop pool with panoramic views."
-    },
-    {
-        "name": "L'Horizon Hotel",
-        "architect": "William F. Cody",
-        "year": "1952",
-        "address": "1050 E Palm Canyon Dr, Palm Springs, CA 92264",
-        "lat": 33.805210,
-        "lng": -116.539210,
-        "streetViewHeading": 315,
-        "description": "Originally designed as a private retreat, this low-slung complex features pavilion-style guest rooms with oversized windows and private patios, exemplifying the indoor-outdoor lifestyle of desert modernism."
-    },
-    {
-        "name": "Miller House",
-        "architect": "Richard Neutra",
-        "year": "1937",
-        "address": "2311 N Indian Canyon Dr, Palm Springs, CA 92262",
-        "lat": 33.850510,
-        "lng": -116.545710,
-        "streetViewHeading": 90,
-        "description": "This early desert modern home innovatively combines living spaces with a movement studio, featuring ribbon windows and outdoor living areas that capture mountain views."
-    },
-    {
-        "name": "Movie Colony Hotel",
-        "architect": "Albert Frey",
-        "year": "1935",
-        "address": "726 N Indian Canyon Dr, Palm Springs, CA 92262",
-        "lat": 33.831110,
-        "lng": -116.547310,
-        "streetViewHeading": 90,
-        "description": "One of Frey's earliest desert works, this hotel demonstrates his emerging modernist style through its innovative sun protection features and efficient use of space."
-    },
-    {
-        "name": "Orbit In Hotel",
-        "architect": "Charles Du Bois",
-        "year": "1957",
-        "address": "562 W Arenas Rd, Palm Springs, CA 92262",
-        "lat": 33.822475,
-        "lng": -116.547486,
-        "streetViewHeading": 0,
-        "description": "This intimate hotel complex showcases playful mid-century design elements with its distinctive curved rooflines and period-appropriate furnishings that create an authentic modernist experience."
-    },
-    {
-        "name": "Palm Springs Animal Shelter",
-        "architect": "Swatt | Miers Architects",
-        "year": "2011",
-        "address": "4575 E Mesquite Ave, Palm Springs, CA 92264",
-        "lat": 33.805210,
-        "lng": -116.501310,
-        "streetViewHeading": 0,
-        "description": "This LEED Gold certified facility combines modernist transparency with sustainable design, featuring natural lighting, energy-efficient systems, and desert landscaping that creates a comfortable environment for both animals and visitors."
-    },
-    {
-        "name": "Palm Springs Art Museum",
-        "architect": "E. Stewart Williams",
-        "year": "1974",
-        "address": "101 N Museum Dr, Palm Springs, CA 92262",
-        "lat": 33.824210,
-        "lng": -116.550010,
-        "streetViewHeading": 90,
-        "description": "The museum's brutalist-influenced design features vertical fins for sun control and rugged concrete surfaces that complement the mountain backdrop while housing world-class art collections."
-    },
-    {
-        "name": "Palm Springs City Hall",
-        "architect": "John Porter Clark, Albert Frey, Robson C. Chambers, E. Stewart Williams",
-        "year": "1952",
-        "address": "3200 E Tahquitz Canyon Way, Palm Springs, CA 92262",
-        "lat": 33.823910,
-        "lng": -116.504410,
-        "streetViewHeading": 0,
-        "description": "The building's iconic porte-cochère features distinctive palm tree columns and a perforated metal screen that provides both shade and architectural interest, creating a uniquely local interpretation of modernist civic architecture."
-    },
-    {
-        "name": "Palm Springs International Airport Terminal",
-        "architect": "Donald Wexler (original), Gensler (2007 addition)",
-        "year": "1966",
-        "address": "3400 E Tahquitz Canyon Way, Palm Springs, CA 92262",
-        "lat": 33.830310,
-        "lng": -116.506710,
-        "streetViewHeading": 0,
-        "description": "The terminal combines Wexler's original modernist design with contemporary additions that maintain the open, airy feeling while meeting modern aviation needs."
-    },
-    {
-        "name": "Palm Springs Tennis Club",
-        "architect": "Paul R. Williams & A. Quincy Jones",
-        "year": "1947",
-        "address": "701 W Baristo Rd, Palm Springs, CA 92262",
-        "lat": 33.822310,
-        "lng": -116.549210,
-        "streetViewHeading": 0,
-        "description": "This recreational complex seamlessly integrates indoor and outdoor spaces through extensive glass walls and covered walkways, creating a sophisticated environment for sports and socializing."
-    },
-    {
-        "name": "Palm Springs Visitors Center",
+        "name": "Palm Springs Visitor Center (Tramway Gas Station)",
         "architect": "Albert Frey & Robson Chambers",
         "year": "1965",
         "address": "2901 N Palm Canyon Dr, Palm Springs, CA 92262",
-        "lat": 33.858410,
-        "lng": -116.558210,
-        "streetViewHeading": 135,
-        "description": "The building's dramatic hyperbolic paraboloid roof and glass walls transformed a simple gas station into an iconic gateway to Palm Springs, demonstrating how everyday architecture could be elevated to art."
-    },
-    {
-        "name": "Parker Palm Springs",
-        "architect": "Gene Autry",
-        "year": "1959",
-        "address": "4200 E Palm Canyon Dr, Palm Springs, CA 92264",
-        "lat": 33.800810,
-        "lng": -116.547810,
-        "streetViewHeading": 315,
-        "description": "This luxury resort combines mid-century bones with contemporary designer Jonathan Adler's playful updates, creating a unique blend of vintage charm and modern sophistication."
-    },
-    {
-        "name": "Racquet Club Estates",
-        "architect": "William Krisel",
-        "year": "1959",
-        "address": "2743 N Starr Rd, Palm Springs, CA 92262",
-        "lat": 33.858910,
-        "lng": -116.543910,
-        "streetViewHeading": 180,
-        "description": "This residential development showcases Krisel's talent for creating variety within standardized plans, featuring his signature butterfly roofs and innovative post-and-beam construction methods."
-    },
-    {
-        "name": "Riviera Hotel & Resort",
-        "architect": "Welton Becket",
-        "year": "1959",
-        "address": "1600 N Indian Canyon Dr, Palm Springs, CA 92262",
-        "lat": 33.844710,
-        "lng": -116.547310,
-        "streetViewHeading": 90,
-        "description": "The hotel's distinctive spoke-wheel design and space-age elements reflect the optimistic spirit of the late 1950s while providing spectacular mountain views from every room."
+        "lat": 33.8584153,
+        "lng": -116.5581827,
+        "description": "Begin at the Palm Springs Visitor Center, formerly the Tramway Gas Station. This iconic building with its distinctive soaring roof was designed by Albert Frey and Robson Chambers."
     },
     {
         "name": "Steel Development Houses",
         "architect": "Donald Wexler",
         "year": "1962",
-        "address": "300 E Simms Rd, Palm Springs, CA 92262",
-        "lat": 33.858910,
-        "lng": -116.545310,
-        "streetViewHeading": 180,
-        "description": "These experimental homes used prefabricated steel components to create affordable, elegant housing perfectly suited to desert conditions, demonstrating Wexler's innovative approach to residential architecture."
+        "address": "290 E Simms Rd, Palm Springs, CA 92262",
+        "lat": 33.8589641,
+        "lng": -116.5439177,
+        "description": "The Steel Development Houses showcase innovative prefabricated steel construction methods pioneered by Donald Wexler."
     },
     {
-        "name": "Tramway Valley Station",
-        "architect": "Albert Frey & Robson Chambers",
-        "year": "1963",
-        "address": "1 Tram Way, Palm Springs, CA 92262",
-        "lat": 33.845910,
-        "lng": -116.546110,
-        "streetViewHeading": 315,
-        "description": "The station's modernist design creates a dramatic starting point for the aerial tramway, with clean lines and simple materials that complement rather than compete with the mountain backdrop."
+        "name": "Kaufmann Desert House",
+        "architect": "Richard Neutra",
+        "year": "1946",
+        "address": "470 W Vista Chino, Palm Springs, CA 92262",
+        "lat": 33.844845,
+        "lng": -116.553008,
+        "description": "One of the most important examples of International Style architecture in the Americas."
     },
     {
-        "name": "Twin Palms (Frank Sinatra House)",
+        "name": "Elvis Honeymoon Hideaway (Alexander Estate)",
+        "architect": "William Krisel",
+        "year": "1962",
+        "address": "1350 Ladera Cir, Palm Springs, CA 92262",
+        "lat": 33.8411047,
+        "lng": -116.5573388,
+        "description": "Also known as the House of Tomorrow, where Elvis and Priscilla Presley spent their honeymoon."
+    },
+    {
+        "name": "Frey House II",
+        "architect": "Albert Frey",
+        "year": "1964",
+        "address": "686 Palisades Dr, Palm Springs, CA 92262",
+        "lat": 33.8231988,
+        "lng": -116.5532392,
+        "description": "Albert Frey's personal residence, ingeniously integrated into the hillside."
+    },
+    {
+        "name": "Palm Springs Art Museum",
         "architect": "E. Stewart Williams",
+        "year": "1974",
+        "address": "101 Museum Dr, Palm Springs, CA 92262",
+        "lat": 33.8241898,
+        "lng": -116.5500130,
+        "description": "A prime example of desert modernism by E. Stewart Williams."
+    },
+    {
+        "name": "Bank of America Building",
+        "architect": "E. Stewart Williams",
+        "year": "1959",
+        "address": "588 S Palm Canyon Dr, Palm Springs, CA 92264",
+        "lat": 33.8143816,
+        "lng": -116.5458313,
+        "description": "One of the finest examples of mid-century modern bank design."
+    },
+    {
+        "name": "Palm Springs City Hall",
+        "architect": "Albert Frey",
+        "year": "1952",
+        "address": "3200 E Tahquitz Canyon Way, Palm Springs, CA 92262",
+        "lat": 33.8232640,
+        "lng": -116.5117685,
+        "description": "Features Frey's distinctive design elements including the iconic brise-soleil."
+    },
+    {
+        "name": "Racquet Club Estates",
+        "architect": "William Krisel",
+        "year": "1959-1962",
+        "address": "2743 N Starr Rd, Palm Springs, CA 92262",
+        "lat": 33.8561520,
+        "lng": -116.5445669,
+        "description": "A neighborhood of Alexander Construction Company homes featuring butterfly roofs and innovative desert modern design."
+    },
+    {
+        "name": "Del Marcos Hotel",
+        "architect": "William F. Cody",
         "year": "1947",
-        "address": "1148 E Alejo Rd, Palm Springs, CA 92262",
-        "lat": 33.831110,
-        "lng": -116.533610,
-        "streetViewHeading": 0,
-        "description": "Williams convinced Sinatra to choose this elegant desert modern design over his initial Georgian concept, creating a sophisticated home featuring clean lines, stone walls, and the famous piano-shaped pool."
+        "address": "225 W Baristo Rd, Palm Springs, CA 92262",
+        "lat": 33.8208865,
+        "lng": -116.5473165,
+        "description": "One of William F. Cody's earliest and most significant works in Palm Springs."
     }
 ]

@@ -8,12 +8,25 @@ import re
 def get_coordinates(address):
     """Get coordinates for an address using Nominatim."""
     base_url = "https://nominatim.openstreetmap.org/search"
+    
+    # Palm Springs bounding box (viewbox parameter)
+    # This helps constrain results to Palm Springs area
+    viewbox = "-116.5900,33.7900,-116.5000,33.8900"
+    
+    # Normalize the address
+    address = address.replace('.', '')  # Remove periods
+    address = re.sub(r'\s+', ' ', address).strip()  # Normalize whitespace
+    
     # Add Palm Springs, CA to make the search more accurate
-    full_address = f"{address}, Palm Springs, CA"
+    full_address = f"{address}, Palm Springs, CA 92262"
+    
     params = {
         'q': full_address,
         'format': 'json',
-        'limit': 1
+        'limit': 1,
+        'viewbox': viewbox,
+        'bounded': 1,  # Restrict to viewbox
+        'countrycodes': 'us'  # Restrict to US
     }
     
     # Add user agent to comply with Nominatim's terms of service
@@ -22,6 +35,14 @@ def get_coordinates(address):
     }
     
     try:
+        response = requests.get(base_url, params=params, headers=headers)
+        data = response.json()
+        
+        if data:
+            return float(data[0]['lat']), float(data[0]['lon'])
+        
+        # If no results with full address, try without ZIP code
+        params['q'] = f"{address}, Palm Springs, CA"
         response = requests.get(base_url, params=params, headers=headers)
         data = response.json()
         

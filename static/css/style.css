@@ -34,6 +34,9 @@ header {
     padding: 1rem;
     box-shadow: 0 2px 4px var(--shadow-color);
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 h1 {
@@ -41,6 +44,23 @@ h1 {
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--text-color);
+    flex: 1;
+}
+
+.settings-button {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    margin-left: 16px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-button:hover {
+    background: var(--background-secondary);
 }
 
 #map {
@@ -94,7 +114,7 @@ h1 {
 }
 
 .location-item {
-    padding: 12px;
+    padding: 16px;
     border-bottom: 1px solid var(--border-color);
     cursor: pointer;
     transition: background-color 0.2s ease;
@@ -104,36 +124,60 @@ h1 {
     background-color: var(--background-secondary);
 }
 
-.location-item .location-title {
-    transition: color 0.2s ease;
+.location-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
 }
 
-.location-item:hover .location-title {
-    color: var(--palm-pink);
-    opacity: 0.8;
+.location-number {
+    font-weight: 600;
+    color: var(--text-secondary);
 }
 
-.location-item.visited .location-title {
-    opacity: 0.5;
+.location-name {
+    font-weight: 600;
+    color: var(--text-secondary);
 }
 
-.location-header {
+.location-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.location-description {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.route-section {
+    margin-bottom: 24px;
+}
+
+.route-header {
+    padding: 1rem;
+    background: var(--background-secondary);
+}
+
+.route-header h2 {
+    margin: 0;
+    padding: 16px;
+    font-size: 1.25rem;
+    font-weight: 600;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 8px;
 }
 
-.location-main {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex: 1;
-}
-
-.stop-number {
-    font-weight: 600;
-    color: var(--text-secondary);
+.route-distance {
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 .checkbox-container {
@@ -213,6 +257,10 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 12px;
+    color: var(--text-color);
+    transition: background-color 0.2s ease;
+    z-index: 1001;
 }
 
 .expand-button:hover {
@@ -261,6 +309,8 @@ h1 {
 }
 
 .custom-marker {
+    border: none;
+    background: none;
     width: 30px;
     height: 30px;
     background-color: var(--primary-color);
@@ -295,33 +345,6 @@ h1 {
     background: var(--primary-color);
     color: white;
     border-radius: 50%;
-}
-
-.route-section {
-    margin-bottom: 24px;
-}
-
-.route-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px;
-    background-color: var(--background-secondary);
-    border-radius: 4px;
-    margin-bottom: 8px;
-}
-
-.route-header h2 {
-    font-size: 18px;
-    font-weight: 600;
-    margin: 0;
-    color: var(--text-color);
-}
-
-.route-distance {
-    font-size: 14px;
-    color: var(--text-secondary);
-    font-weight: 500;
 }
 
 /* Popup styling */
