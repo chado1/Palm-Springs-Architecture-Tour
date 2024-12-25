@@ -123,7 +123,10 @@ document.addEventListener('DOMContentLoaded', function() {
             // Add route header
             const routeHeader = document.createElement('div');
             routeHeader.className = 'route-header';
-            routeHeader.innerHTML = `<h2>Route ${getLoopLetter(routeIndex)}</h2>`;
+            routeHeader.innerHTML = `
+                <h2 style="color: ${color}">Route ${getLoopLetter(routeIndex)}</h2>
+                <span class="route-distance" style="color: ${color}">${formatDistance(route.distance)}</span>
+            `;
             routeSection.appendChild(routeHeader);
             
             // Add locations list

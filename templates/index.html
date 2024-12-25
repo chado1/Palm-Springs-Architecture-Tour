@@ -36,7 +36,13 @@
                 </svg>
             </button>
             <header>
-                <h1>Palm Springs Architecture Tour</h1>
+                <h1>
+                    <span class="title-emoji">🌴</span>
+                    <div class="title-text">
+                        <span class="title-line">Palm Springs</span>
+                        <span class="title-line">Architecture Tour</span>
+                    </div>
+                </h1>
                 <button id="settings-button" class="settings-button" title="Settings">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -47,7 +53,7 @@
             <div id="settings-panel" class="settings-panel hidden">
                 <h2>Tour Settings</h2>
                 <div class="settings-group">
-                    <label for="max-distance">Maximum Walking Distance:</label>
+                    <label for="max-distance">Preferred Walking Distance:</label>
                     <div class="input-group">
                         <input type="number" id="max-distance" min="1" max="10" step="0.5" value="5">
                         <select id="distance-unit">

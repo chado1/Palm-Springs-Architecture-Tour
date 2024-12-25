@@ -89,11 +89,12 @@ The Palm Springs Architecture Tour is a web application that helps users explore
 ## Core Functionality Requirements
 
 ### 1. Route Optimization
-- Maximum walking distance configurable through settings panel (default: 5km)
+- Preferred walking distance configurable through settings panel (default: 5km)
+- Routes may exceed preferred distance when necessary to include all locations
 - Distance unit toggleable between kilometers and miles
 - Settings persist across sessions using localStorage
 - Routes must return to starting point (circular routes)
-- Multiple routes generated if locations exceed max distance
+- Multiple routes generated if locations exceed preferred distance
 - Efficient nearest-neighbor pathfinding implementation
 
 ### 2. Map Interaction

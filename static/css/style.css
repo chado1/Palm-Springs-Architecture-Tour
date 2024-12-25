@@ -37,14 +37,36 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
 }
 
 h1 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 600;
     color: var(--text-color);
-    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.title-emoji {
+    font-size: 1.6rem;
+    line-height: 1;
+}
+
+.title-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.title-line {
+    display: block;
+}
+
+.title-line:first-child {
+    margin-bottom: 0.1rem;
 }
 
 .settings-button {
@@ -52,11 +74,13 @@ h1 {
     border: none;
     padding: 8px;
     cursor: pointer;
-    margin-left: 16px;
     border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
 }
 
 .settings-button:hover {
@@ -161,22 +185,23 @@ h1 {
 }
 
 .route-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 1rem;
-    background: var(--background-secondary);
+    background-color: var(--background-secondary);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .route-header h2 {
     margin: 0;
-    padding: 16px;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: 600;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .route-distance {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
     font-weight: 500;
 }
 
