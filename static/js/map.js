@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Add route header
             const routeHeader = document.createElement('div');
             routeHeader.className = 'route-header';
-            routeHeader.innerHTML = `<h2>Loop ${getLoopLetter(routeIndex)}</h2>`;
+            routeHeader.innerHTML = `<h2>Route ${getLoopLetter(routeIndex)}</h2>`;
             routeSection.appendChild(routeHeader);
             
             // Add locations list
@@ -507,12 +507,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Settings panel functionality
-    document.getElementById('settings-button').addEventListener('click', () => {
-        const panel = document.getElementById('settings-panel');
-        panel.classList.toggle('hidden');
-    });
+    // Export functions for use in main.js
+    window.showLoading = showLoading;
+    window.hideLoading = hideLoading;
+    window.loadLocations = loadLocations;
+    window.userPreferences = {
+        maxDistance: 5,
+        distanceUnit: 'km'
+    };
 
+    // Initialize with default settings
+    loadLocations(5);  // Default 5km
+
+    // Settings panel functionality
     document.getElementById('apply-settings').addEventListener('click', async () => {
         const maxDistance = parseFloat(document.getElementById('max-distance').value);
         const unit = document.getElementById('distance-unit').value;
@@ -523,9 +530,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Save to localStorage
         localStorage.setItem('maxDistance', maxDistance);
         localStorage.setItem('distanceUnit', unit);
-        
-        // Hide settings panel
-        document.getElementById('settings-panel').classList.add('hidden');
         
         // Reload locations with new max distance
         await loadLocations();
@@ -547,7 +551,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('info-panel').classList.toggle('collapsed');
     });
 
-    loadLocations();
     startLocationTracking();
 });
 
