@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <title>Palm Tree Emoji</title>
+    <g id="palm-tree-emoji" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <!-- Trunk (curved like emoji) -->
+        <path d="M14,28 C14,28 13,20 15,16 C17,12 18,10 18,10" 
+              stroke="#825D41" stroke-width="3" stroke-linecap="round"/>
+        
+        <!-- Base shadow -->
+        <ellipse cx="15" cy="28" rx="4" ry="1" fill="#825D41" opacity="0.3"/>
+        
+        <!-- Leaves (layered for 3D effect like emoji) -->
+        <path d="M18,10 C16,8 14,7 12,8 C10,9 9,11 8,13 C12,12 15,11 18,10" 
+              fill="#2D9D5C"/>
+        <path d="M18,10 C20,8 22,7 24,8 C26,9 27,11 28,13 C24,12 21,11 18,10" 
+              fill="#2D9D5C"/>
+        <path d="M18,10 C19,8 20,6 20,4 C20,2 19,1 18,0 C17,1 16,2 16,4 C16,6 17,8 18,10" 
+              fill="#2D9D5C"/>
+        
+        <!-- Highlights -->
+        <path d="M18,10 C19,8 20,6 20,4" 
+              stroke="#1E8348" stroke-width="1" stroke-linecap="round"/>
+        <path d="M18,10 C20,8 22,7 24,8" 
+              stroke="#1E8348" stroke-width="1" stroke-linecap="round"/>
+        <path d="M18,10 C16,8 14,7 12,8" 
+              stroke="#1E8348" stroke-width="1" stroke-linecap="round"/>
+    </g>
+</svg>
