@@ -36,3 +36,4 @@ ENV/
 # Application specific
 *.log
 .cache
+scrape_locations.py
