@@ -637,11 +637,18 @@ h1 {
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: all 0.2s ease;
 }
 
 .primary-button:hover {
-    background-color: var(--primary-color-dark);
+    background-color: var(--hover-color);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.primary-button:active {
+    transform: translateY(0);
+    box-shadow: none;
 }
 
 #locations-container {
