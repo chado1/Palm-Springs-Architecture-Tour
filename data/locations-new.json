@@ -1,0 +1,92 @@
+[
+    {
+        "name": "Palm Springs Visitor Center (Tramway Gas Station)",
+        "architect": "Albert Frey & Robson Chambers",
+        "year": "1965",
+        "address": "2901 N Palm Canyon Dr, Palm Springs, CA 92262",
+        "lat": 33.8584153,
+        "lng": -116.5581827,
+        "description": "Begin at the Palm Springs Visitor Center, formerly the Tramway Gas Station. This iconic building with its distinctive soaring roof was designed by Albert Frey and Robson Chambers."
+    },
+    {
+        "name": "Steel Development Houses",
+        "architect": "Donald Wexler",
+        "year": "1962",
+        "address": "290 E Simms Rd, Palm Springs, CA 92262",
+        "lat": 33.8589641,
+        "lng": -116.5439177,
+        "description": "The Steel Development Houses showcase innovative prefabricated steel construction methods pioneered by Donald Wexler."
+    },
+    {
+        "name": "Kaufmann Desert House",
+        "architect": "Richard Neutra",
+        "year": "1946",
+        "address": "470 W Vista Chino, Palm Springs, CA 92262",
+        "lat": 33.844845,
+        "lng": -116.553008,
+        "description": "One of the most important examples of International Style architecture in the Americas."
+    },
+    {
+        "name": "Elvis Honeymoon Hideaway (Alexander Estate)",
+        "architect": "William Krisel",
+        "year": "1962",
+        "address": "1350 Ladera Cir, Palm Springs, CA 92262",
+        "lat": 33.8411047,
+        "lng": -116.5573388,
+        "description": "Also known as the House of Tomorrow, where Elvis and Priscilla Presley spent their honeymoon."
+    },
+    {
+        "name": "Frey House II",
+        "architect": "Albert Frey",
+        "year": "1964",
+        "address": "686 Palisades Dr, Palm Springs, CA 92262",
+        "lat": 33.8231988,
+        "lng": -116.5532392,
+        "description": "Albert Frey's personal residence, ingeniously integrated into the hillside."
+    },
+    {
+        "name": "Palm Springs Art Museum",
+        "architect": "E. Stewart Williams",
+        "year": "1974",
+        "address": "101 Museum Dr, Palm Springs, CA 92262",
+        "lat": 33.8241898,
+        "lng": -116.5500130,
+        "description": "A prime example of desert modernism by E. Stewart Williams."
+    },
+    {
+        "name": "Bank of America Building",
+        "architect": "E. Stewart Williams",
+        "year": "1959",
+        "address": "588 S Palm Canyon Dr, Palm Springs, CA 92264",
+        "lat": 33.8143816,
+        "lng": -116.5458313,
+        "description": "One of the finest examples of mid-century modern bank design."
+    },
+    {
+        "name": "Palm Springs City Hall",
+        "architect": "Albert Frey",
+        "year": "1952",
+        "address": "3200 E Tahquitz Canyon Way, Palm Springs, CA 92262",
+        "lat": 33.8232640,
+        "lng": -116.5117685,
+        "description": "Features Albert Frey's distinctive design elements including the iconic brise-soleil."
+    },
+    {
+        "name": "Racquet Club Estates",
+        "architect": "William Krisel",
+        "year": "1959-1962",
+        "address": "2743 N Starr Rd, Palm Springs, CA 92262",
+        "lat": 33.8561520,
+        "lng": -116.5445669,
+        "description": "A neighborhood of Alexander Construction Company homes featuring butterfly roofs and innovative desert modern design."
+    },
+    {
+        "name": "Del Marcos Hotel",
+        "architect": "William F. Cody",
+        "year": "1947",
+        "address": "225 W Baristo Rd, Palm Springs, CA 92262",
+        "lat": 33.8208865,
+        "lng": -116.5473165,
+        "description": "One of William F. Cody's earliest and most significant works in Palm Springs."
+    }
+]
