@@ -213,9 +213,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function formatAddress(location) {
         if (!location.name) return location.address;
         
-        const architect = location.architect ? ` (${location.architect}` : '';
-        const year = location.year ? ` – ${location.year})` : (architect ? ')' : '');
-        return `<strong>${location.name}</strong>${architect}${year} — ${location.address}`;
+        const architect = location.architect ? `${location.architect}` : '';
+        const year = location.year ? ` (${location.year})` : '';
+        const details = architect || year ? `${architect}${year} — ` : '';
+        return `${details}${location.address}`;
     }
 
     // Function to toggle description visibility
