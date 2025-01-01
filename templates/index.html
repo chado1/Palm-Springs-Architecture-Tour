@@ -41,6 +41,29 @@
 
     <div id="container">
         <div id="map"></div>
+        <button id="info-button" class="control-button" title="About this tour">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+        </button>
+        <div id="welcome-dialog" class="dialog" style="display: none;">
+            <div class="dialog-content">
+                <h2>☀️ Welcome!</h2>
+                <ul>
+                    <li>This map will guide you to iconic works of modern architecture in Palm Springs</li>
+                    <li>Click any location in the list to view it on the map</li>
+                    <li>Use the settings panel to adjust preferredwalking distance</li>
+                    <li>Because the routes are customizable, there may not always be nice (or any) sidewalks.</li>
+                    <li>Your location will be shown with a blue dot to help you navigate.</li>
+                </ul>
+                <button id="close-dialog" class="primary-button">Start Exploring</button>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="dont-show-again"> Don't show this again
+                </label>
+            </div>
+        </div>
         
         <div id="info-panel">
             <button id="collapse-panel" class="collapse-button">
