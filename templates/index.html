@@ -7,8 +7,9 @@
 
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon/favicon.png') }}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}">
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon/favicon.svg') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon/favicon-32x32.png') }}">
+    <link rel="alternate icon" type="image/png" href="{{ url_for('static', filename='favicon/favicon.png') }}">
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="Explore Palm Springs' iconic modern homes and architecture on this interactive walking tour. Discover mid-century modern houses, residential masterpieces, and architectural landmarks by renowned architects.">
@@ -50,14 +51,14 @@
         </button>
         <div id="welcome-dialog" class="dialog" style="display: none;">
             <div class="dialog-content">
-                <h2>☀️ Welcome!</h2>
+                <h2>🌴 Welcome</h2>
                 <ul>
-                    <li>This map will guide you to iconic works of modern architecture in Palm Springs</li>
-                    <li>Click any location in the list to view it on the map</li>
-                    <li>Use the settings panel to adjust preferredwalking distance</li>
-                    <li>Because the routes are customizable, there may not always be nice (or any) sidewalks.</li>
-                    <li>Your location will be shown with a blue dot to help you navigate.</li>
+                    <li>Use this map to explore iconic modern architecture in Palm Springs!</li>
+                    <li>Click the locations in the list to view on the map</li>
+                    <li>Use the settings panel ⚙️ to adjust preferred walking distance</li>
+                    <li>Your location will be shown with a blue dot to help you navigate</li>
                 </ul>
+                <p class="warning-text">⚠️ Please note that because the routes are customizable, some may be less 'walkable' than others</p>
                 <button id="close-dialog" class="primary-button">Start Exploring</button>
                 <label class="checkbox-label">
                     <input type="checkbox" id="dont-show-again"> Don't show this again
