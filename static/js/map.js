@@ -4,6 +4,53 @@ let markers;
 const markerMap = new Map();  // Store markers by location ID
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Welcome dialog functionality
+    const welcomeDialog = document.getElementById('welcome-dialog');
+    const infoButton = document.getElementById('info-button');
+    const closeButton = document.getElementById('close-dialog');
+    const dontShowCheckbox = document.getElementById('dont-show-again');
+
+    function showDialog() {
+        welcomeDialog.style.display = 'flex';
+        setTimeout(() => welcomeDialog.classList.add('visible'), 10);
+    }
+
+    function hideDialog() {
+        welcomeDialog.classList.remove('visible');
+        setTimeout(() => welcomeDialog.style.display = 'none', 300);
+        
+        if (dontShowCheckbox.checked) {
+            localStorage.setItem('hideWelcome', 'true');
+        }
+    }
+
+    // Show welcome dialog on first visit
+    if (!localStorage.getItem('hideWelcome')) {
+        // Show dialog immediately, don't wait for load
+        showDialog();
+    }
+
+    // Event listeners for dialog
+    infoButton.addEventListener('click', showDialog);
+    closeButton.addEventListener('click', () => {
+        hideDialog();
+        // If the loading is done, remove the loading overlay
+        if (!document.getElementById('loading-overlay').style.display || 
+            document.getElementById('loading-overlay').style.display === 'none') {
+            hideLoading();
+        }
+    });
+    welcomeDialog.addEventListener('click', (e) => {
+        if (e.target === welcomeDialog) {
+            hideDialog();
+            // If the loading is done, remove the loading overlay
+            if (!document.getElementById('loading-overlay').style.display || 
+                document.getElementById('loading-overlay').style.display === 'none') {
+                hideLoading();
+            }
+        }
+    });
+
     // Initialize map
     map = L.map('map').setView([33.8303, -116.5453], 14);
     
