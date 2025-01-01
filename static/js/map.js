@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Function to load and display locations
     async function loadLocations() {
         try {
-            // Convert max distance to kilometers for API
+            showLoading();
             const maxDistanceKm = toKilometers(userPreferences.maxDistance, userPreferences.distanceUnit);
             
             const response = await fetch(`/api/locations?maxDistance=${maxDistanceKm}`);
@@ -344,6 +344,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         } catch (error) {
             console.error('Error loading locations:', error);
+        } finally {
+            hideLoading();
         }
     }
 
@@ -365,6 +367,15 @@ document.addEventListener('DOMContentLoaded', function() {
     window.panToLocation = panToLocation;
     window.findLocationById = findLocationById;
 
+    // Loading state functions
+    function showLoading() {
+        document.getElementById('loading-overlay').style.display = 'flex';
+    }
+
+    function hideLoading() {
+        document.getElementById('loading-overlay').style.display = 'none';
+    }
+
     // Initialize with default settings
     loadLocations(5);  // Default 5km
 
@@ -380,8 +391,15 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('maxDistance', maxDistance);
         localStorage.setItem('distanceUnit', unit);
         
+        // Show loading while recalculating routes
+        showLoading();
+        document.querySelector('.loading-text').textContent = 'Recalculating routes...';
+        
         // Reload locations with new max distance
         await loadLocations();
+        
+        // Reset loading text
+        document.querySelector('.loading-text').textContent = 'Calculating routes...';
     });
 
     // Initialize settings form

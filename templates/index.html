@@ -34,6 +34,11 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+    <div id="loading-overlay" style="display: none;">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Calculating routes...</div>
+    </div>
+
     <div id="container">
         <div id="map"></div>
         
