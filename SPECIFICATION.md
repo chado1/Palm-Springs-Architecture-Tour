@@ -13,6 +13,7 @@ The Palm Springs Architecture Tour is a web application that helps users explore
   - Loading overlay for route calculations
   - Settings panel for route customization
   - Responsive design for mobile and desktop
+  - Welcome dialog with GitHub link and usage instructions
 - **Dependencies**:
   - Leaflet.js (v1.9.4)
   - Leaflet MarkerCluster (v1.4.1)
@@ -27,12 +28,17 @@ The Palm Springs Architecture Tour is a web application that helps users explore
   - Route visualization
   - Location markers and clustering
   - User location tracking
+  - Custom Google Maps links for locations
+  - Welcome dialog management
 - **Exposed Global Functions**:
   - `showLoading()`: Display loading overlay
   - `hideLoading()`: Hide loading overlay
   - `loadLocations()`: Load and display route data
+  - `showDialog()`: Display welcome dialog
+  - `hideDialog()`: Hide welcome dialog
 - **Global State**:
   - `window.userPreferences`: Stores current route settings
+  - `localStorage.hideWelcome`: Persists welcome dialog preference
 
 #### Settings Module (`static/js/main.js`)
 - **Purpose**: Handles user preferences and settings
@@ -47,6 +53,7 @@ The Palm Springs Architecture Tour is a web application that helps users explore
 - **LocalStorage Keys**:
   - `distanceUnit`: User's preferred unit (km/mi)
   - `maxDistance`: Maximum route distance
+  - `hideWelcome`: Welcome dialog display preference
 
 ### 3. Backend Server (`app.py`)
 - **Purpose**: Flask server handling route optimization requests
@@ -76,15 +83,26 @@ The Palm Springs Architecture Tour is a web application that helps users explore
   - Fallback to straight-line distance for nearby points (<100m)
   - Candidate filtering using straight-line distance
 
-## Data Structure
-
-### Location Data (`data/locations.json`)
-- Format: JSON array of location objects
-- Required fields per location:
-  - lat: Latitude (float)
-  - lng: Longitude (float)
-  - name: Location name (string)
-  - description: Location details (string)
+### 5. Data Structure (`data/locations.json`)
+- **Purpose**: Stores location data and metadata
+- **Key Features**:
+  - Building information (name, architect, year)
+  - Precise coordinates (latitude, longitude)
+  - Detailed descriptions
+  - Custom Google Maps links for each location
+- **Data Format**:
+  ```json
+  {
+    "name": "Building Name",
+    "architect": "Architect Name",
+    "year": "Year",
+    "address": "Full Address",
+    "lat": latitude,
+    "lng": longitude,
+    "description": "Building description",
+    "googleMapsLink": "Custom Google Maps URL"
+  }
+  ```
 
 ## Core Functionality Requirements
 
@@ -145,3 +163,4 @@ The Palm Springs Architecture Tour is a web application that helps users explore
 - Public API endpoints rate-limited
 - Input validation on all parameters
 - Secure asset loading (HTTPS)
+- LocalStorage used only for user preferences

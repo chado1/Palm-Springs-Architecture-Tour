@@ -6,11 +6,16 @@ A web application that provides optimized walking routes for exploring Palm Spri
 - Interactive map showing architectural points of interest
 - Multiple color-coded walking loops for manageable distances
 - Optimized walking routes between locations
-- Information about each building including its architect, year, and address
+- Detailed information about each building including:
+  - Architect and year built
+  - Full address with Google Maps integration
+  - Historical and architectural significance
+- Welcome dialog with usage instructions and GitHub link
 - Checklist functionality to track visited locations
 - Mobile-friendly interface
 - Real-time distance calculations
 - Automatic route optimization based on walking distance
+- Settings persistence across sessions
 
 ## Setup
 1. Install Python dependencies:
@@ -31,6 +36,7 @@ python app.py
 - Map: Leaflet.js with OpenStreetMap
 - Routing: OSRM (OpenStreetMap Route Machine)
 - Data: JSON file containing location information
+- Storage: LocalStorage for user preferences
 
 ## Features
 ### Multiple Walking Loops
@@ -40,14 +46,24 @@ python app.py
 
 ### Interactive Interface
 - Click on any marker to view building information
+- Direct links to Google Maps for precise navigation
 - Click on list items to pan/zoom to locations
 - Check off buildings as you visit them
 - Collapsible sidebar for better mobile viewing
+- Welcome dialog with helpful information
 
 ### Route Optimization
 - Routes are optimized for walking distance
 - Real walking paths using street data
 - Automatic route segmentation based on maximum walking distance
+- Configurable maximum walking distance
+- Support for both metric (km) and imperial (mi) units
+
+### Data Management
+- Precise location coordinates
+- Detailed architectural information
+- Custom Google Maps links for each location
+- Persistent user preferences across sessions
 
 ## Contributing
 Contributions are welcome! Please feel free to submit a Pull Request.
