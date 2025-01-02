@@ -209,9 +209,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to create Google Street View URL
     function createStreetViewUrl(location) {
-        // Create a search query using the location's name and address
-        const searchQuery = encodeURIComponent(`${location.name}, ${location.address}`);
-        return `https://www.google.com/maps/search/?api=1&query=${searchQuery}`;
+        return location.googleMapsLink;
     }
 
     // Function to format address with building name, architect, and year
