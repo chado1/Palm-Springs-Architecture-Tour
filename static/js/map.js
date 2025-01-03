@@ -512,6 +512,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     startLocationTracking();
+
+    // Add debug double-click handler to map
+    map.on('dblclick', function(e) {
+        console.log(`Latitude: ${e.latlng.lat}, Longitude: ${e.latlng.lng}`);
+        // For easy copying to JSON:
+        console.log(`"lat": ${e.latlng.lat},\n"lng": ${e.latlng.lng}`);
+    });
 });
 
 function toggleDetails(locationId, event) {

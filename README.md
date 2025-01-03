@@ -7,7 +7,6 @@ A web application that provides optimized walking routes for exploring Palm Spri
 - Multiple color-coded walking loops for manageable distances
 - Optimized walking routes between locations
 - Information about each building including its architect, year, and address
-- Checklist functionality to track visited locations
 - Mobile-friendly interface
 - Real-time distance calculations
 - Automatic route optimization based on walking distance
@@ -41,7 +40,6 @@ python app.py
 ### Interactive Interface
 - Click on any marker to view building information
 - Click on list items to pan/zoom to locations
-- Check off buildings as you visit them
 - Collapsible sidebar for better mobile viewing
 
 ### Route Optimization

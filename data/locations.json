@@ -10,14 +10,64 @@
         "googleMapsLink": "https://maps.app.goo.gl/guktTiR5c7VWWRsu7"
     },
     {
+        "name": "Villa Alejo Condominiums",
+        "architect": "Richard Harrison",
+        "year": "1966",
+        "address": "277 E Alejo Rd, Palm Springs, CA 92262",
+        "lat": 33.83029437631588,
+        "lng": -116.54438534741986,
+        "description": "A significant example of mid-century modern condominium design in Palm Springs.",
+        "googleMapsLink": "https://maps.app.goo.gl/wdezFUoBhsPyAZ668"
+    },
+    {
+        "name": "Oasis Commercial Building",
+        "architect": "E. Stewart Williams",
+        "year": "1952",
+        "address": "101 S Palm Canyon Dr, Palm Springs, CA 92262",
+        "lat": 33.822861909903565,
+        "lng": -116.54680773320858,
+        "description": "An early example of desert modernism in downtown Palm Springs.",
+        "googleMapsLink": "https://maps.app.goo.gl/6VMSugrxGaNAdfWt8"
+    },
+    {
+        "name": "Ship of the Desert",
+        "architect": "Wilson & Webster",
+        "year": "1936",
+        "address": "299 W Carmino Carmelita, Palm Springs, CA 92264",
+        "lat": 33.793956067535774,
+        "lng": -116.54835194349292,
+        "description": "An early modernist house with distinctive nautical-inspired design elements.",
+        "googleMapsLink": "https://maps.app.goo.gl/XWJiG2xeVeNv9zRg7"
+    },
+    {
+        "name": "Edris House",
+        "architect": "E. Stewart Williams",
+        "year": "1952",
+        "address": "1030 W Cielo Dr, Palm Springs, CA 92262",
+        "lat": 33.84577441934287,
+        "lng": -116.56148357414169,
+        "description": "A masterful example of desert modernism by E. Stewart Williams.",
+        "googleMapsLink": "https://maps.app.goo.gl/r1SuNXyYGBhjnHeN6"
+    },
+    {
+        "name": "Fire Station No. 1",
+        "architect": "Albert Frey & Robson Chambers",
+        "year": "1955",
+        "address": "277 N Indian Canyon Dr, Palm Springs, CA 92262",
+        "lat": 33.8262833,
+        "lng": -116.5458145,
+        "description": "A functional yet stylish fire station designed by Albert Frey and Robson Chambers.",
+        "googleMapsLink": "https://maps.app.goo.gl/DGBfKzk1PoEtkygM6"
+    },
+    {
         "name": "Steel Development Houses",
         "architect": "Donald Wexler",
         "year": "1962",
-        "address": "476 E Simms Rd, Palm Springs, CA 92262",
-        "lat": 33.8582435,
-        "lng": -116.5426811,
+        "address": "300 E Molino Rd, Palm Springs, CA 92262",
+        "lat": 33.85876945173845,
+        "lng": -116.54407281428577,
         "description": "The Steel Development Houses showcase innovative prefabricated steel construction methods pioneered by Donald Wexler.",
-        "googleMapsLink": "https://maps.app.goo.gl/xzUccfty52Fb1Ky77"
+        "googleMapsLink": "https://maps.app.goo.gl/yuRwGn2RbQShJB9MA"
     },
     {
         "name": "Kaufmann Desert House",
@@ -40,23 +90,13 @@
         "googleMapsLink": "https://maps.app.goo.gl/XMtYXTcdTZ3ybTsW6"
     },
     {
-        "name": "Frey House II",
-        "architect": "Albert Frey",
-        "year": "1964",
-        "address": "686 Palisades Dr, Palm Springs, CA 92262",
-        "lat": 33.8231988,
-        "lng": -116.5532392,
-        "description": "Albert Frey's personal residence, ingeniously integrated into the hillside.",
-        "googleMapsLink": "https://maps.app.goo.gl/w1drTARC1vQKbG3g9"
-    },
-    {
-        "name": "Palm Springs Art Museum",
+        "name": "Palm Springs Art Museum (and Frey House II)",
         "architect": "E. Stewart Williams",
         "year": "1974",
         "address": "101 Museum Dr, Palm Springs, CA 92262",
         "lat": 33.8241898,
         "lng": -116.5500130,
-        "description": "A prime example of desert modernism by E. Stewart Williams.",
+        "description": "A prime example of desert modernism by E. Stewart Williams. The Frey House II is owned by the Museum and is inaccessible as it is located on a private road, however tours can be arranged through the Museum.",
         "googleMapsLink": "https://maps.app.goo.gl/9zonE1tj5UDaX64w9"
     },
     {
@@ -98,5 +138,95 @@
         "lng": -116.5480556,
         "description": "One of William F. Cody's earliest and most significant works in Palm Springs.",
         "googleMapsLink": "https://maps.app.goo.gl/rSbX5qvcvBmusKEJ7"
+    },
+    {
+        "name": "Kocher-Samson Building",
+        "architect": "Albert Frey & A. Lawrence Kocher",
+        "year": "1934",
+        "address": "766 N Palm Canyon Dr, Palm Springs, CA 92262",
+        "lat": 33.83357684246016,
+        "lng": -116.54676944017413,
+        "description": "An early example of International Style architecture in Palm Springs, designed by Albert Frey and A. Lawrence Kocher.",
+        "googleMapsLink": "https://maps.app.goo.gl/NgRJKxdggcujDF8q8"
+    },
+    {
+        "name": "Aluminaire House",
+        "architect": "Albert Frey & A. Lawrence Kocher",
+        "year": "1931",
+        "address": "500 W Museum Way, Palm Springs, CA 92262",
+        "lat": 33.823454594167615,
+        "lng": -116.54943509124679,
+        "description": "A groundbreaking example of modern architecture, this all-metal prefabricated house was originally built in 1931 and relocated to Palm Springs. It represents one of the first examples of International Style architecture in the United States.",
+        "googleMapsLink": "https://maps.app.goo.gl/GFzB94LoFYJHqDfk9"
+    },
+    {
+        "name": "Coachella Valley Savings & Loan #2 (Chase Bank)",
+        "architect": "E. Stewart Williams",
+        "year": "1960",
+        "address": "499 S Palm Canyon Dr, Palm Springs, CA 92262",
+        "lat": 33.816138742183384,
+        "lng": -116.54679358005525,
+        "description": "Originally built as the second Coachella Valley Savings & Loan, this modernist bank building exemplifies E. Stewart Williams' innovative approach to commercial architecture. Now operating as a Chase Bank branch, it maintains its distinctive mid-century modern design features.",
+        "googleMapsLink": "https://maps.app.goo.gl/vVtPejLX69pv7Pw56"
+    },
+    {
+        "name": "Kaptur Plaza",
+        "architect": "Hugh Kaptur",
+        "year": "1977",
+        "address": "650 E Tahquitz Canyon Way, Palm Springs, CA 92262",
+        "lat": 33.8233063,
+        "lng": -116.5415802,
+        "description": "A striking example of late modernist commercial architecture, featuring dramatic angular forms and deep-set windows characteristic of Hugh Kaptur's distinctive architectural style.",
+        "googleMapsLink": "https://maps.app.goo.gl/kUbMSWLPVVhkMGiC6"
+    },
+    {
+        "name": "Village Manor (Orbit In)",
+        "architect": "Herbert Burns",
+        "year": "1957",
+        "address": "562 W Arenas Rd, Palm Springs, CA 92262",
+        "lat": 33.8212275,
+        "lng": -116.5520404,
+        "description": "A classic example of mid-century modern hotel design by Herbert Burns, featuring distinctive architectural elements and period furnishings that capture the essence of Palm Springs' modernist era.",
+        "googleMapsLink": "https://maps.app.goo.gl/McbXpg4bToL9TVs46"
+    },
+    {
+        "name": "Fire Station No. 3",
+        "architect": "Hugh Kaptur",
+        "year": "1958",
+        "address": "590 E Racquet Club Rd, Palm Springs, CA 92262",
+        "lat": 33.85215633631934,
+        "lng": -116.54104292392732,
+        "description": "A modernist fire station designed by Hugh Kaptur, showcasing his distinctive approach to civic architecture.",
+        "googleMapsLink": "https://maps.app.goo.gl/tMiT5ggxrywhFJLS8"
+    },
+    {
+        "name": "Fire Station No. 4",
+        "architect": "Hugh Kaptur",
+        "year": "1964",
+        "address": "1300 S La Verne Way, Palm Springs, CA 92264",
+        "lat": 33.796754,
+        "lng": -116.532102,
+        "description": "A modernist fire station designed by Hugh Kaptur, demonstrating his innovative approach to civic architecture.",
+        "googleMapsLink": "https://maps.app.goo.gl/86DX6bqxf1uHD5bt8"
+    },
+    {
+        "name": "Musicland Hotel",
+        "architect": "Hugh Kaptur",
+        "year": "1961",
+        "address": "1342 S Palm Canyon Dr, Palm Springs, CA 92264",
+        "lat": 33.805401378630904,
+        "lng": -116.54560804367067,
+        "description": "A distinctive mid-century modern hotel designed by Hugh Kaptur, featuring his characteristic bold architectural style.",
+        "googleMapsLink": "https://maps.app.goo.gl/bsP5pSj4d7PAZfQq9"
+    },
+    {
+        "name": "Southern California Gas Company Building",
+        "architect": "Robert H. Ricciardi",
+        "year": "1961",
+        "address": "1800 E Tahquitz Canyon Way, Palm Springs, CA 92262",
+        "lat": 33.8252003,
+        "lng": -116.5282776,
+        "description": "A prime example of desert modernism in commercial architecture, featuring a distinctive folded-plate roof, deep overhangs for sun protection, and a seamless integration with its desert environment. The building's innovative design by Victor Gruen Associates effectively combines functionality with modernist aesthetics.",
+        "googleMapsLink": "https://maps.app.goo.gl/oFq9bMNaZJyF5yBx5"
     }
 ]
