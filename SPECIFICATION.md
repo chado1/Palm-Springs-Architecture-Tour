@@ -20,7 +20,20 @@ The Palm Springs Architecture Tour is a web application that helps users explore
   - Leaflet.Locate (v0.79.0)
   - Inter font family
 
-### 2. Frontend JavaScript Architecture
+### 2. Git Branch Structure
+- **Main Branches**:
+  - `main`: Production-ready code
+  - `develop`: Integration branch for feature development
+- **Feature Branches**:
+  - `feature/location-updates`: Updates to location data and related functionality
+  - `fix/settings-button-hover`: UI fix for settings button hover state
+- **Branch Strategy**:
+  - Feature branches are created from `develop`
+  - Completed features are merged back into `develop`
+  - `develop` is merged into `main` for releases
+  - Hotfixes can be branched directly from `main`
+
+### 3. Frontend JavaScript Architecture
 #### Map Module (`static/js/map.js`)
 - **Purpose**: Core map functionality and route display
 - **Key Features**:
@@ -55,7 +68,7 @@ The Palm Springs Architecture Tour is a web application that helps users explore
   - `maxDistance`: Maximum route distance
   - `hideWelcome`: Welcome dialog display preference
 
-### 3. Backend Server (`app.py`)
+### 4. Backend Server (`app.py`)
 - **Purpose**: Flask server handling route optimization requests
 - **Key Features**:
   - Location data caching
@@ -68,7 +81,7 @@ The Palm Springs Architecture Tour is a web application that helps users explore
   - Debug mode enabled for development
   - Default port: 5000
 
-### 4. Route Optimizer (`route_optimizer.py`)
+### 5. Route Optimizer (`route_optimizer.py`)
 - **Purpose**: Core routing logic for creating optimized walking tours
 - **Key Features**:
   - Route distance calculation

@@ -11,7 +11,6 @@ A web application that provides optimized walking routes for exploring Palm Spri
   - Full address with Google Maps integration
   - Historical and architectural significance
 - Welcome dialog with usage instructions and GitHub link
-- Checklist functionality to track visited locations
 - Mobile-friendly interface
 - Real-time distance calculations
 - Automatic route optimization based on walking distance
@@ -48,7 +47,6 @@ python app.py
 - Click on any marker to view building information
 - Direct links to Google Maps for precise navigation
 - Click on list items to pan/zoom to locations
-- Check off buildings as you visit them
 - Collapsible sidebar for better mobile viewing
 - Welcome dialog with helpful information
 
