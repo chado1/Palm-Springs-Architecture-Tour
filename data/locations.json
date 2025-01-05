@@ -11,7 +11,7 @@
     },
     {
         "name": "Villa Alejo Condominiums",
-        "architect": "Richard Harrison",
+        "architect": "Robert Meyers & Victor Koozin",
         "year": "1966",
         "address": "277 E Alejo Rd, Palm Springs, CA 92262",
         "lat": 33.83029437631588,
@@ -22,7 +22,7 @@
     {
         "name": "Oasis Commercial Building",
         "architect": "E. Stewart Williams",
-        "year": "1952",
+        "year": "1953",
         "address": "101 S Palm Canyon Dr, Palm Springs, CA 92262",
         "lat": 33.822861909903565,
         "lng": -116.54680773320858,
@@ -31,7 +31,7 @@
     },
     {
         "name": "Ship of the Desert",
-        "architect": "Wilson & Webster",
+        "architect": "Adrian Wilson & Erle Webster",
         "year": "1936",
         "address": "299 W Carmino Carmelita, Palm Springs, CA 92264",
         "lat": 33.793956067535774,
@@ -42,7 +42,7 @@
     {
         "name": "Edris House",
         "architect": "E. Stewart Williams",
-        "year": "1952",
+        "year": "1953",
         "address": "1030 W Cielo Dr, Palm Springs, CA 92262",
         "lat": 33.84577441934287,
         "lng": -116.56148357414169,
@@ -61,7 +61,7 @@
     },
     {
         "name": "Steel Development Houses",
-        "architect": "Donald Wexler",
+        "architect": "Donald Wexler & Richard Harrison",
         "year": "1962",
         "address": "300 E Molino Rd, Palm Springs, CA 92262",
         "lat": 33.85876945173845,
@@ -92,16 +92,16 @@
     {
         "name": "Palm Springs Art Museum (and Frey House II)",
         "architect": "E. Stewart Williams",
-        "year": "1974",
+        "year": "1976",
         "address": "101 Museum Dr, Palm Springs, CA 92262",
         "lat": 33.8241898,
         "lng": -116.5500130,
-        "description": "A prime example of desert modernism by E. Stewart Williams. The Frey House II is owned by the Museum and is inaccessible as it is located on a private road, however tours can be arranged through the Museum.",
+        "description": "A prime example of desert modernism by E. Stewart Williams. The Frey House II (1963 by Albert Frey)is owned by the Museum and is inaccessible as it is located on a private road, however tours can be arranged through the Museum.",
         "googleMapsLink": "https://maps.app.goo.gl/9zonE1tj5UDaX64w9"
     },
     {
         "name": "Bank of America Building",
-        "architect": "E. Stewart Williams",
+        "architect": "Victor Gruen Associates",
         "year": "1959",
         "address": "588 S Palm Canyon Dr, Palm Springs, CA 92264",
         "lat": 33.8143816,
@@ -111,7 +111,7 @@
     },
     {
         "name": "Palm Springs City Hall",
-        "architect": "Albert Frey",
+        "architect": "Albert Frey, E. Stewart Williams, Robson Chambers, John Porter Clark",
         "year": "1952",
         "address": "3200 E Tahquitz Canyon Way, Palm Springs, CA 92262",
         "lat": 33.8232640,
@@ -222,11 +222,31 @@
     {
         "name": "Southern California Gas Company Building",
         "architect": "Robert H. Ricciardi",
-        "year": "1961",
+        "year": "1969",
         "address": "1800 E Tahquitz Canyon Way, Palm Springs, CA 92262",
         "lat": 33.8252003,
         "lng": -116.5282776,
         "description": "A prime example of desert modernism in commercial architecture, featuring a distinctive folded-plate roof, deep overhangs for sun protection, and a seamless integration with its desert environment. The building's innovative design by Victor Gruen Associates effectively combines functionality with modernist aesthetics.",
         "googleMapsLink": "https://maps.app.goo.gl/oFq9bMNaZJyF5yBx5"
+    },
+    {
+        "name": "Palm Springs Art Museum Architecture and Design Center",
+        "architect": "E. Stewart Williams",
+        "year": "1960",
+        "address": "300 S Palm Canyon Dr, Palm Springs, CA 92262",
+        "lat": 33.819146,
+        "lng": -116.546788,
+        "description": "Originally designed as a bank, this International Style building now serves as the Architecture and Design Center for the Palm Springs Art Museum. The building exemplifies Williams' masterful blend of modernism with desert environment.",
+        "googleMapsLink": "https://maps.app.goo.gl/sLbiRe1A13EU5E1x9"
+    },
+    {
+        "name": "The Alley",
+        "architect": "William Pereira & Charles Luckman",
+        "year": "1958",
+        "address": "333 S Palm Canyon Dr, Palm Springs, CA 92262",
+        "lat": 33.8191374,
+        "lng": -116.5469181,
+        "description": "Originally a Robinson's department store, this modernist building features distinctive brise soleil screens and was designed by the renowned firm of Pereira & Luckman. Now known as The Alley, it remains an excellent example of mid-century retail architecture.",
+        "googleMapsLink": "https://maps.app.goo.gl/kNpJ8PU3BnryviDX9"
     }
 ]
