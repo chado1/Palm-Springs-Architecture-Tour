@@ -74,29 +74,49 @@ The Palm Springs Architecture Tour is a web application that helps users explore
   - Location data caching
   - Route optimization endpoint
   - Error handling and logging
+  - GraphHopper API integration
 - **Endpoints**:
   - `GET /`: Serves main application page
   - `GET /api/locations`: Returns optimized routes based on parameters
 - **Configuration**:
   - Debug mode enabled for development
   - Default port: 5000
+  - GraphHopper API key from environment variables
 
-### 5. Route Optimizer (`route_optimizer.py`)
-- **Purpose**: Core routing logic for creating optimized walking tours
+### 5. Route Optimizer Components
+
+#### GraphHopper Client (`graphhopper_client.py`)
+- **Purpose**: Handles distance calculations and route optimization
 - **Key Features**:
-  - Route distance calculation
-  - Nearest neighbor pathfinding
-  - Integration with OSRM for walking directions
+  - Custom nearest-neighbor route optimization
+  - Smart point insertion for leftover locations
+  - Proper handling of return trips
+  - Distance calculations using GraphHopper API
 - **Key Functions**:
-  - `optimize_route()`: Creates multiple walking loops under specified distance
-  - `create_walking_loop()`: Generates single optimized walking route
-  - `get_walking_route()`: Fetches walking directions between points
+  - `optimize_tour()`: Creates multiple walking loops under specified distance
+  - `_optimize_routes()`: Implements nearest-neighbor algorithm with constraints
+  - `_calculate_distance()`: Calculates distances between points
+- **Performance Optimizations**:
+  - Efficient point grouping algorithm
+  - Smart handling of leftover points
+  - Distance caching for frequently accessed routes
+
+#### Route Optimizer (`route_optimizer.py`)
+- **Purpose**: High-level route management and caching
+- **Key Features**:
+  - Route caching and persistence
+  - Distance unit conversion
+  - Integration with GraphHopper client
+- **Key Functions**:
+  - `get_optimized_routes()`: Main entry point for route optimization
+  - `_load_cached_routes()`: Handles route caching
+  - `_save_cached_routes()`: Persists optimized routes
 - **Performance Optimizations**:
   - LRU caching for route calculations
-  - Fallback to straight-line distance for nearby points (<100m)
-  - Candidate filtering using straight-line distance
+  - JSON-based route persistence
+  - Efficient route data structure
 
-### 5. Data Structure (`data/locations.json`)
+### 6. Data Structure (`data/locations.json`)
 - **Purpose**: Stores location data and metadata
 - **Key Features**:
   - Building information (name, architect, year)
@@ -162,7 +182,7 @@ The Palm Springs Architecture Tour is a web application that helps users explore
 ## External Dependencies
 
 ### Routing Service
-- OSRM (Open Source Routing Machine)
+- GraphHopper API
 - Timeout: 2 seconds
 - Fallback mechanism for failed requests
 

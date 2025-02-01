@@ -22,18 +22,22 @@ A web application that provides optimized walking routes for exploring Palm Spri
 pip install -r requirements.txt
 ```
 
-2. Run the Flask application:
+2. Set up environment variables:
+   - Copy `.env.example` to `.env`
+   - Add your GraphHopper API key to `.env`
+
+3. Run the Flask application:
 ```bash
 python app.py
 ```
 
-3. Open your web browser and navigate to `http://localhost:5000`
+4. Open your web browser and navigate to `http://localhost:5000`
 
 ## Technology Stack
 - Backend: Python Flask
 - Frontend: HTML, CSS, JavaScript
 - Map: Leaflet.js with OpenStreetMap
-- Routing: OSRM (OpenStreetMap Route Machine)
+- Routing: Custom optimization algorithm with GraphHopper API for distance calculations
 - Data: JSON file containing location information
 - Storage: LocalStorage for user preferences
 
@@ -51,8 +55,10 @@ python app.py
 - Welcome dialog with helpful information
 
 ### Route Optimization
-- Routes are optimized for walking distance
-- Real walking paths using street data
+- Custom nearest-neighbor algorithm for efficient route creation
+- Smart point insertion for optimal route organization
+- Routes respect maximum walking distance including return trips
+- Real walking paths using GraphHopper's distance calculations
 - Automatic route segmentation based on maximum walking distance
 - Configurable maximum walking distance
 - Support for both metric (km) and imperial (mi) units
