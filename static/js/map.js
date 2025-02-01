@@ -96,8 +96,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // User preferences
     const userPreferences = {
-        distanceUnit: localStorage.getItem('distanceUnit') || 'mi',
-        maxDistance: parseFloat(localStorage.getItem('maxDistance')) || 3.0  // Default to 3 miles
+        distanceUnit: localStorage.getItem('distanceUnit') || 'km',  // Default to kilometers
+        maxDistance: parseFloat(localStorage.getItem('maxDistance')) || 5.0  // Default to 5 kilometers
     };
 
     // Convert distance based on user preference
