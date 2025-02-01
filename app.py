@@ -1,3 +1,6 @@
+from dotenv import load_dotenv
+load_dotenv()  # Load environment variables from .env file
+
 from flask import Flask, render_template, jsonify, request
 import json
 import os
@@ -41,14 +44,32 @@ def get_locations():
         logger.info(f"Using max distance of {max_distance} km per route")
         
         # Optimize the routes with the specified max distance
-        optimized = optimize_route(locations, max_distance=max_distance)
+        routes = optimize_route(locations, max_distance=max_distance)
+        
+        # Format the response
+        total_distance = sum(route['total_distance'] for route in routes)
+        
+        # Create route segments from the routes
+        route_segments = []
+        for i, route in enumerate(routes):
+            if route['geometry']:
+                route_segments.append({
+                    'route_index': i,
+                    'polyline': route['geometry'],
+                })
         
         logger.info(f"Routes optimized:")
-        for i, route in enumerate(optimized['routes']):
-            logger.info(f"Route {i+1}: {len(route['locations'])} stops, {route['distance']:.2f} km")
-        logger.info(f"Total distance: {optimized['total_distance']:.2f} km")
+        for i, route in enumerate(routes):
+            logger.info(f"Route {i+1}: {len(route['locations'])} stops, {route['total_distance']:.2f} km")
+        logger.info(f"Total distance: {total_distance:.2f} km")
         
-        return jsonify(optimized)
+        response = {
+            'routes': routes,
+            'total_distance': total_distance,
+            'route_segments': route_segments
+        }
+        
+        return jsonify(response)
         
     except Exception as e:
         logger.error(f"Error in get_locations: {str(e)}")

@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
             routeHeader.className = 'route-header';
             routeHeader.innerHTML = `
                 <h2 style="color: ${color}">Route ${getLoopLetter(routeIndex)}</h2>
-                <span class="route-distance" style="color: ${color}">${formatDistance(route.distance)}</span>
+                <span class="route-distance" style="color: ${color}">${formatDistance(route.total_distance)}</span>
             `;
             routeSection.appendChild(routeHeader);
             
@@ -169,20 +169,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     const lng = parseFloat(li.dataset.lng);
                     
                     if (!isNaN(lat) && !isNaN(lng)) {
-                        // First find and open the marker's popup
+                        map.setView([lat, lng], 18);
+                        
+                        // Find and open the marker's popup
                         const marker = markerMap.get(location.id);
                         if (marker) {
                             marker.openPopup();
                         }
-                        
-                        // Then pan to location
-                        map.flyTo([lat, lng], 18, {
-                            duration: 1.5,
-                            easeLinearity: 0.25
-                        });
                     }
                 });
-
+                
                 locationsList.appendChild(li);
             });
             
