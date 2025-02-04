@@ -88,18 +88,22 @@ The Palm Springs Architecture Tour is a web application that helps users explore
 #### GraphHopper Client (`graphhopper_client.py`)
 - **Purpose**: Handles distance calculations and route optimization
 - **Key Features**:
-  - Custom nearest-neighbor route optimization
-  - Smart point insertion for leftover locations
+  - K-means clustering for geographic point grouping
+  - Nearest-neighbor optimization within clusters
+  - Inter-route optimization for improved tour quality
   - Proper handling of return trips
   - Distance calculations using GraphHopper API
 - **Key Functions**:
   - `optimize_tour()`: Creates multiple walking loops under specified distance
-  - `_optimize_routes()`: Implements nearest-neighbor algorithm with constraints
+  - `_optimize_routes()`: Implements k-means clustering and optimization
+  - `_cluster_points()`: Groups points using k-means algorithm
+  - `_optimize_tour_assignments()`: Improves routes through point reassignment
   - `_calculate_distance()`: Calculates distances between points
 - **Performance Optimizations**:
-  - Efficient point grouping algorithm
-  - Smart handling of leftover points
-  - Distance caching for frequently accessed routes
+  - Efficient k-means clustering for initial point grouping
+  - Smart within-cluster route optimization
+  - Inter-route optimization for global improvement
+  - Automatic cluster size balancing based on max distance
 
 #### Route Optimizer (`route_optimizer.py`)
 - **Purpose**: High-level route management and caching

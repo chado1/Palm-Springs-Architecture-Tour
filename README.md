@@ -55,8 +55,9 @@ python app.py
 - Welcome dialog with helpful information
 
 ### Route Optimization
-- Custom nearest-neighbor algorithm for efficient route creation
-- Smart point insertion for optimal route organization
+- Advanced k-means clustering for geographic point grouping
+- Optimized routes within clusters using nearest-neighbor algorithm
+- Inter-route optimization to improve overall tour quality
 - Routes respect maximum walking distance including return trips
 - Real walking paths using GraphHopper's distance calculations
 - Automatic route segmentation based on maximum walking distance
