@@ -13,6 +13,22 @@ document.addEventListener('DOMContentLoaded', function() {
     
     distanceUnitSelect.value = savedUnit;
     maxDistanceInput.value = savedMaxDistance;
+
+    // Add input validation
+    maxDistanceInput.addEventListener('input', function(e) {
+        const value = e.target.value;
+        // Remove any non-numeric characters except decimal point
+        let sanitized = value.replace(/[^\d.]/g, '');
+        // Ensure only one decimal point
+        const parts = sanitized.split('.');
+        if (parts.length > 2) {
+            sanitized = parts[0] + '.' + parts.slice(1).join('');
+        }
+        // Update value if it changed
+        if (value !== sanitized) {
+            e.target.value = sanitized;
+        }
+    });
     
     // Settings button click handler
     settingsButton.addEventListener('click', () => {
@@ -21,8 +37,22 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Apply settings click handler
     applySettingsButton.addEventListener('click', () => {
-        const maxDistance = maxDistanceInput.value;
+        let maxDistance = parseFloat(maxDistanceInput.value);
         const unit = distanceUnitSelect.value;
+        
+        // Validate the distance
+        if (isNaN(maxDistance) || maxDistance <= 0) {
+            alert('Please enter a valid positive number for the maximum distance.');
+            return;
+        }
+
+        // Set reasonable limits based on units
+        const maxLimit = unit === 'km' ? 20 : 12; // 20km or 12mi
+        if (maxDistance > maxLimit) {
+            alert(`Maximum distance cannot exceed ${maxLimit} ${unit}.`);
+            maxDistance = maxLimit;
+            maxDistanceInput.value = maxLimit;
+        }
         
         localStorage.setItem('distanceUnit', unit);
         localStorage.setItem('maxDistance', maxDistance);

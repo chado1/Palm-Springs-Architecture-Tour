@@ -96,7 +96,14 @@
                 <div class="settings-group">
                     <label for="max-distance">Preferred Route Distance:</label>
                     <div class="input-group">
-                        <input type="number" id="max-distance" min="1" max="10" step="0.5" value="5">
+                        <input type="number" 
+       id="max-distance" 
+       name="max-distance" 
+       min="0.5" 
+       max="20" 
+       step="0.1" 
+       required 
+       title="Enter a number between 0.5 and 20">
                         <select id="distance-unit">
                             <option value="km">kilometers</option>
                             <option value="mi">miles</option>
