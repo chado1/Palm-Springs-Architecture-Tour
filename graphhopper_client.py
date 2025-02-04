@@ -129,118 +129,225 @@ class GraphhopperClient:
         return self._optimize_routes(points, max_distance)
             
     def _optimize_routes(self, points: List[Tuple[float, float]], max_distance: float = None) -> List[List[Tuple[float, float]]]:
-        """Enhanced route optimization using nearest neighbor with route splitting."""
+        """Enhanced route optimization using k-means clustering and nearest neighbor."""
         if not max_distance:
             return [points]
             
-        # Start with all points as unvisited
-        unvisited = list(range(len(points)))
-        tours = []
+        if len(points) <= 2:
+            return [points]
+
+        # Phase 1: K-means clustering
+        num_clusters = max(1, min(len(points) // 5, int(max_distance / 1000)))  # Balance cluster size with max distance
+        clusters = self._cluster_points(points, num_clusters)
         
-        while unvisited:
-            # Start a new tour
+        tours = []
+        for cluster_points in clusters:
+            if not cluster_points:  # Skip empty clusters
+                continue
+                
+            # Phase 2: Optimize within cluster using nearest neighbor
             current_tour = []
+            unvisited = list(range(len(cluster_points)))
             current_distance = 0
-            current_point_idx = unvisited[0]  # Start with first unvisited point
-            tour_points = set()
             
-            while True:
-                # Add current point to tour
-                current_tour.append(points[current_point_idx])
-                tour_points.add(current_point_idx)
+            # Start with point closest to cluster center
+            center = self._calculate_cluster_center(cluster_points)
+            current_idx = self._find_closest_to_point(cluster_points, center)
+            
+            while unvisited:
+                current_tour.append(cluster_points[current_idx])
+                unvisited.remove(current_idx)
                 
-                # Find nearest unvisited point that doesn't exceed max_distance
-                min_extra_distance = float('inf')
-                next_point_idx = None
+                if not unvisited:
+                    break
+                    
+                # Find next closest point considering max distance
+                next_idx = self._find_best_next_point(
+                    cluster_points, current_idx, unvisited,
+                    current_tour[0], current_distance, max_distance
+                )
                 
-                for idx in unvisited:
-                    if idx in tour_points:
+                if next_idx is None:
+                    # Close current tour and start a new one if needed
+                    if current_tour[0] != current_tour[-1]:
+                        current_tour.append(current_tour[0])
+                    tours.append(current_tour)
+                    
+                    if unvisited:  # If there are still points in this cluster
+                        current_tour = []
+                        current_distance = 0
+                        current_idx = unvisited[0]
+                        continue
+                    break
+                
+                # Calculate new distance
+                extra_distance = self._calculate_distance(
+                    cluster_points[current_idx][0], cluster_points[current_idx][1],
+                    cluster_points[next_idx][0], cluster_points[next_idx][1]
+                )
+                current_distance += extra_distance
+                current_idx = next_idx
+            
+            # Close the final tour in this cluster
+            if current_tour and current_tour[0] != current_tour[-1]:
+                current_tour.append(current_tour[0])
+            if current_tour:
+                tours.append(current_tour)
+        
+        # Phase 3: Try to optimize tours
+        tours = self._optimize_tour_assignments(tours, max_distance)
+        
+        return tours
+
+    def _cluster_points(self, points: List[Tuple[float, float]], k: int) -> List[List[Tuple[float, float]]]:
+        """Cluster points using k-means algorithm."""
+        if len(points) <= k:
+            return [[p] for p in points]
+            
+        # Initialize centroids randomly from existing points
+        import random
+        centroids = random.sample(points, k)
+        
+        max_iterations = 100
+        for _ in range(max_iterations):
+            # Assign points to nearest centroid
+            clusters = [[] for _ in range(k)]
+            for point in points:
+                distances = [self._calculate_distance(point[0], point[1], c[0], c[1]) for c in centroids]
+                closest = distances.index(min(distances))
+                clusters[closest].append(point)
+            
+            # Calculate new centroids
+            new_centroids = []
+            for cluster in clusters:
+                if not cluster:  # Skip empty clusters
+                    new_centroids.append(centroids[len(new_centroids)])
+                    continue
+                center = self._calculate_cluster_center(cluster)
+                new_centroids.append(center)
+            
+            # Check for convergence
+            if all(self._calculate_distance(old[0], old[1], new[0], new[1]) < 1.0 
+                   for old, new in zip(centroids, new_centroids)):
+                break
+            
+            centroids = new_centroids
+        
+        return [c for c in clusters if c]  # Return only non-empty clusters
+
+    def _calculate_cluster_center(self, points: List[Tuple[float, float]]) -> Tuple[float, float]:
+        """Calculate the center point of a cluster."""
+        if not points:
+            return (0.0, 0.0)
+        return (
+            sum(p[0] for p in points) / len(points),
+            sum(p[1] for p in points) / len(points)
+        )
+
+    def _find_closest_to_point(self, points: List[Tuple[float, float]], target: Tuple[float, float]) -> int:
+        """Find index of point closest to target."""
+        if not points:
+            return -1
+        distances = [self._calculate_distance(p[0], p[1], target[0], target[1]) for p in points]
+        return distances.index(min(distances))
+
+    def _find_best_next_point(self, points: List[Tuple[float, float]], current_idx: int,
+                            unvisited: List[int], start_point: Tuple[float, float],
+                            current_distance: float, max_distance: float) -> int:
+        """Find best next point that doesn't exceed max_distance."""
+        min_extra_distance = float('inf')
+        best_idx = None
+        
+        for idx in unvisited:
+            # Calculate distance to next point
+            extra_distance = self._calculate_distance(
+                points[current_idx][0], points[current_idx][1],
+                points[idx][0], points[idx][1]
+            )
+            
+            # Calculate distance back to start
+            dist_back = self._calculate_distance(
+                points[idx][0], points[idx][1],
+                start_point[0], start_point[1]
+            )
+            
+            total_extra = extra_distance + dist_back
+            
+            # Check if this would exceed max_distance
+            if current_distance + total_extra <= max_distance and total_extra < min_extra_distance:
+                min_extra_distance = total_extra
+                best_idx = idx
+        
+        return best_idx
+
+    def _optimize_tour_assignments(self, tours: List[List[Tuple[float, float]]], max_distance: float) -> List[List[Tuple[float, float]]]:
+        """Try to optimize tour assignments by moving points between tours."""
+        improved = True
+        while improved:
+            improved = False
+            
+            # Try to move points between tours
+            for i, tour1 in enumerate(tours):
+                if len(tour1) <= 2:  # Skip tours that are too small
+                    continue
+                    
+                for j, tour2 in enumerate(tours):
+                    if i == j:
                         continue
                         
-                    # Calculate additional distance if we add this point
-                    extra_distance = self._calculate_distance(
-                        points[current_point_idx][0], points[current_point_idx][1],
-                        points[idx][0], points[idx][1]
-                    )
-                    
-                    # Also consider distance back to start
-                    dist_back = self._calculate_distance(
-                        points[idx][0], points[idx][1],
-                        current_tour[0][0], current_tour[0][1]
-                    )
-                    
-                    total_extra = extra_distance + dist_back
-                    
-                    # Check if adding this point would exceed max_distance
-                    if current_distance + total_extra <= max_distance and total_extra < min_extra_distance:
-                        min_extra_distance = total_extra
-                        next_point_idx = idx
-                
-                if next_point_idx is None:
-                    break  # No more points can be added to this tour
-                    
-                # Update current point and distance
-                current_distance += min_extra_distance
-                current_point_idx = next_point_idx
-            
-            # Close the loop by returning to start
-            if current_tour[0] != current_tour[-1]:
-                current_tour.append(current_tour[0])
-            
-            # Add tour to list and remove visited points
-            tours.append(current_tour)
-            unvisited = [idx for idx in unvisited if idx not in tour_points]
-            
-            if len(tours) > 10:  # Safety check
-                break
-        
-        # If we have leftover points, try to insert them into existing tours
-        if unvisited:
-            for idx in unvisited:
-                point = points[idx]
-                best_insertion = None
-                min_extra_distance = float('inf')
-                
-                # Try to insert into each tour
-                for tour_idx, tour in enumerate(tours):
-                    # Calculate current tour distance
-                    tour_distance = sum(
-                        self._calculate_distance(
-                            tour[i][0], tour[i][1],
-                            tour[i+1][0], tour[i+1][1]
-                        )
-                        for i in range(len(tour)-1)
-                    )
-                    
-                    # Try inserting at each position
-                    for pos in range(len(tour)-1):
-                        # Calculate extra distance if we insert here
-                        extra_distance = (
-                            self._calculate_distance(
-                                tour[pos][0], tour[pos][1],
-                                point[0], point[1]
-                            ) +
-                            self._calculate_distance(
-                                point[0], point[1],
-                                tour[pos+1][0], tour[pos+1][1]
-                            ) -
-                            self._calculate_distance(
-                                tour[pos][0], tour[pos][1],
-                                tour[pos+1][0], tour[pos+1][1]
-                            )
-                        )
+                    # Try moving each point from tour1 to tour2
+                    for idx1 in range(len(tour1) - 1):  # Skip last point (it's the same as first)
+                        point = tour1[idx1]
                         
-                        if tour_distance + extra_distance <= max_distance and extra_distance < min_extra_distance:
-                            min_extra_distance = extra_distance
-                            best_insertion = (tour_idx, pos+1)
+                        # Calculate current distances
+                        old_dist1 = sum(self._calculate_distance(
+                            tour1[k][0], tour1[k][1],
+                            tour1[k+1][0], tour1[k+1][1]
+                        ) for k in range(len(tour1)-1))
+                        
+                        old_dist2 = sum(self._calculate_distance(
+                            tour2[k][0], tour2[k][1],
+                            tour2[k+1][0], tour2[k+1][1]
+                        ) for k in range(len(tour2)-1))
+                        
+                        # Try inserting at each position in tour2
+                        for insert_pos in range(len(tour2)):
+                            new_tour1 = tour1[:idx1] + tour1[idx1+1:]
+                            new_tour2 = tour2[:insert_pos] + [point] + tour2[insert_pos:]
+                            
+                            # Ensure tours are closed
+                            if new_tour1[0] != new_tour1[-1]:
+                                new_tour1.append(new_tour1[0])
+                            if new_tour2[0] != new_tour2[-1]:
+                                new_tour2.append(new_tour2[0])
+                            
+                            # Calculate new distances
+                            new_dist1 = sum(self._calculate_distance(
+                                new_tour1[k][0], new_tour1[k][1],
+                                new_tour1[k+1][0], new_tour1[k+1][1]
+                            ) for k in range(len(new_tour1)-1))
+                            
+                            new_dist2 = sum(self._calculate_distance(
+                                new_tour2[k][0], new_tour2[k][1],
+                                new_tour2[k+1][0], new_tour2[k+1][1]
+                            ) for k in range(len(new_tour2)-1))
+                            
+                            # Check if this improves the solution and respects max_distance
+                            if (new_dist1 <= max_distance and new_dist2 <= max_distance and
+                                new_dist1 + new_dist2 < old_dist1 + old_dist2):
+                                tours[i] = new_tour1
+                                tours[j] = new_tour2
+                                improved = True
+                                break
+                        
+                        if improved:
+                            break
+                    
+                    if improved:
+                        break
                 
-                # Insert point into best position if found
-                if best_insertion:
-                    tour_idx, pos = best_insertion
-                    tours[tour_idx].insert(pos, point)
-                else:
-                    # If we can't insert, create a new tour with just this point
-                    tours.append([point, point])
+                if improved:
+                    break
         
         return tours
 
